@@ -8,6 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Pizza : NSObject
+typedef enum: NSUInteger{
+    Small,
+    Medium,
+    Large
+}PizzaSize;
+
+@interface Pizza: NSObject
+@property (nonatomic, strong) NSArray *toppings;
+@property (nonatomic, assign) PizzaSize size;
+-(instancetype)initWithSize: (PizzaSize) size AndToppings: (NSArray *) topping;
++ (Pizza *) largePepporoni;
++ (Pizza *) meatLoversWithSize: (PizzaSize) size;
++ (PizzaSize) getPizzaSize:(NSString *) size;
+- (NSString *) description;
+
+
+
+
 
 @end
